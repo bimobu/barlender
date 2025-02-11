@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: . # Use the current directory as the build context
+      dockerfile: Dockerfile # Specify the Dockerfile to use
+    ports:
+      - "8080:8080" # Map port 8080 on the host to port 8080 in the container
+    command: ["/app/main"] # Use the full path to the binary
+    container_name: app
