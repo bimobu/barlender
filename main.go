@@ -8,7 +8,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/", func(c *gin.Context) {
-		component := hello("Simon")
+		component := hello("Fabi")
 		component.Render(c.Request.Context(), c.Writer)
 	})
 
