@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-	component := hello("askfjhbajbseljbhfa")
+	component := hello("fabi")
 
 	http.Handle("/", templ.Handler(component))
 
