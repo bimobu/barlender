@@ -5,6 +5,7 @@ FROM golang:1.23.6-bookworm
 WORKDIR /app
 
 RUN go install github.com/air-verse/air@latest
+RUN go install github.com/a-h/templ/cmd/templ@latest
 
 # Copy go mod and sum files
 COPY go.mod ./
