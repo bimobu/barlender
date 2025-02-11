@@ -1,22 +1,40 @@
+// package main
+
+// import (
+// 	"net/http"
+
+// 	"github.com/gin-gonic/gin"
+// )
+
+// func main() {
+// 	// Create a default gin router
+// 	router := gin.Default()
+
+// 	// Define a route for the root path
+// 	router.GET("/", func(c *gin.Context) {
+// 		c.JSON(http.StatusOK, gin.H{
+// 			"message": "Hello, World!",
+// 		})
+// 	})
+
+// 	// Run the server on port 8080
+// 	router.Run(":8080")
+// }
+
 package main
 
 import (
+	"fmt"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
+	"github.com/a-h/templ"
 )
 
 func main() {
-	// Create a default gin router
-	router := gin.Default()
+	component := hello("John")
 
-	// Define a route for the root path
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "Hello, World!",
-		})
-	})
+	http.Handle("/", templ.Handler(component))
 
-	// Run the server on port 8080
-	router.Run(":8080")
+	fmt.Println("Listening on :3000")
+	http.ListenAndServe(":3000", nil)
 }
