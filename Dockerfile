@@ -4,6 +4,8 @@ FROM golang:1.23.6-bookworm
 # Set working directory
 WORKDIR /app
 
+RUN go install github.com/air-verse/air@latest
+
 # Copy go mod and sum files
 COPY go.mod ./
 
@@ -20,4 +22,4 @@ RUN go build -o main .
 EXPOSE 8080
 
 # Run the executable
-CMD ["./main"]
+CMD ["air"]

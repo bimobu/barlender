@@ -31,10 +31,10 @@ import (
 )
 
 func main() {
-	component := hello("John")
+	component := hello("askfjhbajbseljbhfa")
 
 	http.Handle("/", templ.Handler(component))
 
-	fmt.Println("Listening on :3000")
-	http.ListenAndServe(":3000", nil)
+	fmt.Println("Listening on :8080")
+	http.ListenAndServe(":8080", nil)
 }
