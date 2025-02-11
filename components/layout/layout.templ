@@ -1,0 +1,21 @@
+package layout
+
+import "barlender/components/hello"
+
+templ Template(title string) {
+    <html>
+        <head>
+            <meta charset="UTF-8"></meta>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+            <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+            <link rel="stylesheet" href="static/css/output.css"></link>
+            <title>{title}</title>
+        </head>
+        <body>
+            <main class="p-6 grid gap-4">
+              <div class="border-2">{title}</div>
+              @hello.Hello(title)
+            </main>
+        </body>
+    </html>
+}
